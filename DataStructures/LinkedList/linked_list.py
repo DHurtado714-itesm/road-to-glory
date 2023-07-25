@@ -26,6 +26,44 @@ class ListaEnlazada:
             print(nodo_actual.dato)  # ...imprimimos su dato.
             nodo_actual = nodo_actual.siguiente  # Y pasamos al siguiente nodo.
 
+# Función para insertar un nuevo nodo en un índice específico.
+    def insertar(self, indice, dato):
+        if indice == 0:
+            nuevo_nodo = Nodo(dato)
+            nuevo_nodo.siguiente = self.cabeza
+            self.cabeza = nuevo_nodo
+        else:
+            nodo_actual = self.cabeza
+            posicion_actual = 0
+            while nodo_actual and posicion_actual < indice:
+                if posicion_actual == indice - 1:
+                    nuevo_nodo = Nodo(dato)
+                    nuevo_nodo.siguiente = nodo_actual.siguiente
+                    nodo_actual.siguiente = nuevo_nodo
+                nodo_actual = nodo_actual.siguiente
+                posicion_actual += 1
+
+    # Función para eliminar un nodo por dato.
+    def eliminar(self, dato):
+        nodo_actual = self.cabeza
+        anterior = None
+        while nodo_actual and nodo_actual.dato != dato:
+            anterior = nodo_actual
+            nodo_actual = nodo_actual.siguiente
+        if anterior is None:
+            self.cabeza = nodo_actual.siguiente
+        elif nodo_actual:
+            anterior.siguiente = nodo_actual.siguiente
+
+    # Función para buscar un dato en la lista.
+    def buscar(self, dato):
+        nodo_actual = self.cabeza
+        while nodo_actual:
+            if nodo_actual.dato == dato:
+                return True
+            nodo_actual = nodo_actual.siguiente
+        return False
+
 mi_lista = ListaEnlazada()
 mi_lista.agregar('A')
 mi_lista.agregar('B')
