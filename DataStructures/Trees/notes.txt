@@ -1,0 +1,10 @@
+Existen muchos tipos de árboles en ciencias de la computación, cada uno con sus propias propiedades y aplicaciones. Aquí te explicaré tres de los más comunes: árboles binarios, árboles binarios de búsqueda y árboles AVL.
+
+Árbol Binario: 
+Es un árbol en el que cada nodo tiene como máximo dos hijos, que se denominan nodo izquierdo y nodo derecho. No existe ningún orden específico para los valores de los nodos en un árbol binario.
+
+Árbol Binario de Búsqueda (BST por sus siglas en inglés): 
+Es un tipo especial de árbol binario en el que todos los nodos a la izquierda de un nodo tienen valores menores que el valor del nodo y todos los nodos a la derecha de un nodo tienen valores mayores.
+
+Árbol AVL: 
+Es un tipo especial de árbol binario de búsqueda que está equilibrado. Esto significa que para cada nodo en el árbol, la altura de su subárbol izquierdo y la altura de su subárbol derecho difieren en no más de 1. Esto asegura que las operaciones de búsqueda, inserción y eliminación se pueden realizar de manera eficiente.
