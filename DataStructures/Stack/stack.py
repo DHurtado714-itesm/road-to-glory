@@ -1,23 +1,37 @@
-class Pila:
+class Stack:
     def __init__(self):
-        self.elementos = []  # Iniciamos una lista vacía para almacenar los elementos de la pila.
+        # Initialize an empty list to store the stack elements
+        self.items = []
 
-    def push(self, dato):
-        # La función append de las listas de Python añade el elemento al final de la lista,
-        # que en nuestro caso equivale a la parte superior de la pila.
-        self.elementos.append(dato)
+    def push(self, item):
+        # Add an item to the top of the stack
+        self.items.append(item)
 
     def pop(self):
-        # Verificamos primero si la pila no está vacía.
-        if not self.esta_vacia():
-            # La función pop de las listas de Python retira el último elemento de la lista,
-            # que en nuestro caso equivale a retirar el elemento de la parte superior de la pila.
-            return self.elementos.pop()
+        # Remove and return the top item from the stack
+        if not self.is_empty():
+            return self.items.pop()
+        return "Stack is empty"
 
-    def esta_vacia(self):
-        # Verificamos si la pila está vacía comprobando si la longitud de la lista es 0.
-        return len(self.elementos) == 0
+    def peek(self):
+        # Return the top item from the stack without removing it
+        if not self.is_empty():
+            return self.items[-1]
+        return "Stack is empty"
 
-    def mostrar_pila(self):
-        # Devolvemos la lista de elementos que conforma nuestra pila.
-        return self.elementos
+    def is_empty(self):
+        # Check if the stack is empty
+        return len(self.items) == 0
+
+    def size(self):
+        # Return the number of items in the stack
+        return len(self.items)
+
+# Example Usage:
+s = Stack()
+s.push(1)
+s.push(2)
+s.push(3)
+print(s.peek())  # Expected: 3
+print(s.pop())   # Expected: 3
+print(s.size())  # Expected: 2

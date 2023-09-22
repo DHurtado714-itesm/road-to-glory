@@ -1,23 +1,37 @@
-class Fila:
+class Queue:
     def __init__(self):
-        self.elementos = []  # Iniciamos una lista vacía para almacenar los elementos de la fila.
+        # Initialize an empty list to store the queue elements
+        self.items = []
 
-    def enqueue(self, dato):
-        # La función insert de las listas de Python añade el elemento al inicio de la lista,
-        # que en nuestro caso equivale a la parte trasera de la fila.
-        self.elementos.insert(0, dato)
+    def enqueue(self, item):
+        # Add an item to the end of the queue
+        self.items.append(item)
 
     def dequeue(self):
-        # Verificamos primero si la fila no está vacía.
-        if not self.esta_vacia():
-            # La función pop de las listas de Python retira el último elemento de la lista,
-            # que en nuestro caso equivale a retirar el elemento del frente de la fila.
-            return self.elementos.pop()
+        # Remove and return the front item from the queue
+        if not self.is_empty():
+            return self.items.pop(0)
+        return "Queue is empty"
 
-    def esta_vacia(self):
-        # Verificamos si la fila está vacía comprobando si la longitud de la lista es 0.
-        return len(self.elementos) == 0
+    def peek(self):
+        # Return the front item from the queue without removing it
+        if not self.is_empty():
+            return self.items[0]
+        return "Queue is empty"
 
-    def mostrar_fila(self):
-        # Devolvemos la lista de elementos que conforma nuestra fila.
-        return self.elementos
+    def is_empty(self):
+        # Check if the queue is empty
+        return len(self.items) == 0
+
+    def size(self):
+        # Return the number of items in the queue
+        return len(self.items)
+
+# Example Usage:
+q = Queue()
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+print(q.peek())  # Expected: 1
+print(q.dequeue())  # Expected: 1
+print(q.size())  # Expected: 2
