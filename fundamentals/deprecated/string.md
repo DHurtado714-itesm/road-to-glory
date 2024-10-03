@@ -48,6 +48,12 @@ reemplazado = cadena.replace("mundo", "Python")
 # Obtener la longitud de la cadena
 longitud = len(cadena)
 
+# Eliinar el primer caracter sobre el que se está trabajando
+cadena = cadena[1:]
+
+# Agregar al final de la cadena
+cadena += " ¡Adiós!"
+
 # Dividir la cadena por espacios (por defecto)
 dividido = cadena.split()
 

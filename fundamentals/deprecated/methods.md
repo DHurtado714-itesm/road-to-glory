@@ -16,14 +16,6 @@
 3. **find(substring)**: Busca una subcadena en el string.
 4. **replace(old, new)**: Reemplaza ocurrencias de una subcadena por otra.
 
-## Métodos de Listas
-
-1. **append(item)**: Añade un elemento al final de la lista.
-2. **pop(index)**: Elimina y retorna el elemento en el índice dado. 
-3. **reverse()**: Invierte el orden de los elementos en la lista.
-4. **index(item)**: Retorna el índice del primer elemento igual al especificado.
-5. **sort()**: Ordena los elementos de la lista.
-
 ## Métodos de Diccionarios
 
 1. **get(key, default)**: Retorna el valor para la clave dada, o un valor predeterminado. Evita errores si la clave no existe.
